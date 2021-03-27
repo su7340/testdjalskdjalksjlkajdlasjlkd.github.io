@@ -4,21 +4,408 @@
 <head>
     <meta charset="utf-8">
     <title>test</title>
-    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        body {
+            height: 1200px;
+            background-color: rgba(185, 185, 185, 0.63);
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .box1 {
+            background-color: #f5f5f5;
+            width: 1525px;
+            height: 30px;
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+        
+        .contact {
+            width: 1080px;
+            display: flex;
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        #x {
+            position: absolute;
+            right: -200px;
+            margin-top: -30px;
+        }
+        
+        #y {
+            position: absolute;
+            right: -130px;
+            margin-top: -30px;
+        }
+        
+        #z {
+            position: absolute;
+            right: -60px;
+            margin-top: -30px;
+        }
+        
+        .contact div {
+            margin: 0px 10px;
+            font-size: 12px;
+            position: absolute;
+            right: 50px;
+        }
+        
+        .contact a {
+            color: grey;
+        }
+        
+        .on {
+            width: 75%;
+            height: 840px;
+            margin: auto;
+            background-color: white;
+            margin-top: -8px;
+        }
+        
+        .on .top {
+            position: relative;
+            height: 80px;
+        }
+        
+        .on .top .logo .right {
+            position: absolute;
+            top: 30px;
+            left: 780px;
+        }
+        
+        .on .top .tel {
+            position: absolute;
+            left: 820px;
+            bottom: 25px;
+            font-family: sans-serif;
+            color: rgba(185, 185, 185, 0.83);
+            font-size: xx-small;
+        }
+        
+        .on .top .number {
+            position: absolute;
+            left: 920px;
+            bottom: 20px;
+            font-size: 25px;
+            color: red;
+        }
+        
+        .on .daohang {
+            width: 1127px;
+            background-color: #776e65;
+            line-height: 40px;
+            position: relative;
+            height: 40px;
+        }
+        
+        .on .daohang li {
+            display: inline;
+            list-style: none;
+            margin: 20px;
+        }
+        
+        .on .daohang li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .on .daohang .search {
+            position: relative;
+            left: 800px;
+            top: -55px;
+            width: 80px;
+        }
+        
+        .on .daohang .sear {
+            position: relative;
+            bottom: 35px;
+            left: 140px;
+            width: 80px;
+        }
+        
+        .box {
+            width: 1128px;
+            height: 400px;
+            position: relative;
+        }
+        
+        .list {
+            width: 1128px;
+            height: 400px;
+            list-style: none;
+            position: relative;
+            padding-left: 0px;
+        }
+        
+        .item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .btn {
+            width: 20px;
+            height: 200px;
+            position: absolute;
+            top: 110px;
+            z-index: 100;
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+        
+        #goPre {
+            left: 0px;
+        }
+        
+        #goNext {
+            right: 0px;
+        }
+        
+        .item.active {
+            z-index: 10;
+        }
+        
+        .on .news {
+            margin-top: 10px;
+            display: flex;
+            position: relative;
+        }
+        
+        .on .news .news-one {
+            width: 375px;
+            height: 275px;
+            border: 1px solid grey;
+            position: relative;
+        }
+        
+        .on .news .news-one .shang {
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid grey;
+            padding: 0px 20px;
+            color: grey;
+        }
+        
+        .on .news .news-one .shang a {
+            color: grey;
+        }
+        
+        .on .news .news-one .shang span {
+            position: absolute;
+            right: 10px;
+        }
+        
+        .on .news .news-one li {
+            list-style: none;
+            font-size: 15px;
+            border-bottom: 1px dotted grey;
+            margin-top: 8px;
+        }
+        
+        .on .news .news-one .zhong {
+            padding: 12px 10px;
+        }
+        
+        .on .news .news-one .zhong .wenzi {
+            position: absolute;
+            right: 60px;
+            top: 50px;
+            font-family: monospace;
+            line-height: 20px;
+        }
+        
+        .on .news .news-one .wenzi #one {
+            color: red;
+            font-weight: 700;
+        }
+        
+        .on .news .news-one .wenzi a {
+            color: red;
+            font-weight: 600;
+        }
+        
+        .on .news .news-one .xia {
+            position: absolute;
+            left: -35px;
+            width: 400px;
+        }
+        
+        .on .news .news-one .xia a {
+            color: black;
+            font-size: 10px;
+        }
+        
+        .on .news .news-one .xia span {
+            color: grey;
+            font-size: 12px;
+            text-align: right;
+            float: right;
+        }
+        
+        .on .news .news-two {
+            margin: 0px 20px;
+            width: 425px;
+            height: 275px;
+            border: 1px solid grey;
+            position: relative;
+        }
+        
+        .on .news .news-two .shang-b {
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid grey;
+            padding: 0px 20px;
+            color: grey;
+        }
+        
+        .on .news .news-two .shang-b a {
+            float: right;
+            color: grey;
+        }
+        
+        .on .news .news-two .zhong-b {
+            padding: 10px;
+        }
+        
+        .on .news .news-two .zhong-b .wenzi-b {
+            width: 250px;
+            font-size: 15px;
+            position: absolute;
+            left: 165px;
+            top: 45px;
+        }
+        
+        .on .news .news-two .zhong-b .wenzi-b #two {
+            color: red;
+            font-weight: 700;
+        }
+        
+        .on .news .news-two .xia-b {
+            display: flex;
+            background-color: whitesmoke;
+            margin-top: 40px;
+            font-family: cursive;
+            font-size: 13px;
+        }
+        
+        .on .news .news-two .xia-b div {
+            margin: 0px 20px;
+        }
+        
+        .on .news .news-two .xia-b a {
+            color: black;
+        }
+        
+        .on .news .news-three {
+            width: 280px;
+            height: 205px;
+            border: 1px solid grey;
+        }
+        
+        .on .news .news-three .shang-c {
+            padding: 0px 20px;
+            width: 240px;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid grey;
+            color: grey;
+        }
+        
+        .on .news .news-three .shang-c span {
+            float: right;
+        }
+        
+        .on .news .news-three .xia-c {
+            margin-top: 5px;
+            width: 280px;
+            height: 60px;
+            border: 1px solid grey;
+        }
+        
+        .bottom {
+            height: 250px;
+            background-color: #e8e8e8;
+            text-align: center;
+            display: flex;
+            position: relative;
+        }
+        
+        .bottom a {
+            color: grey;
+        }
+        
+        .bottom .first {
+            width: 175px;
+            height: 200px;
+            position: relative;
+            left: 280px;
+        }
+        
+        .bottom .first div {
+            line-height: 40px;
+            border-right: 2px solid grey;
+        }
+        
+        .bottom .second {
+            width: 175px;
+            height: 200px;
+            position: relative;
+            left: 280px;
+        }
+        
+        .bottom .second div {
+            line-height: 40px;
+            border-right: 2px solid grey;
+        }
+        
+        .bottom .third {
+            width: 175px;
+            height: 200px;
+            position: relative;
+            left: 280px;
+        }
+        
+        .bottom .third div {
+            line-height: 40px;
+            border-right: 2px solid grey;
+        }
+        
+        .bottom .fourth {
+            width: 175px;
+            height: 200px;
+            position: relative;
+            left: 280px;
+        }
+        
+        .bottom .fourth div {
+            line-height: 40px;
+            border-right: 2px solid grey;
+        }
+        
+        .bottom .fifth {
+            position: relative;
+            top: 50px;
+            left: 350px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="box1"></div>
     <div class="contact">
-        <div id="x"><img src="photo/arrow.jpg"><a href="#">设为首页</a></div>
-        <div id="y"><img src="photo/arrow.jpg"><a href="#">加入收藏</a></div>
-        <div id="z"><img src="photo/arrow.jpg"><a href="#">联系我们</a></div>
+        <div id="x"><img src="arrow.jpg"><a href="#">设为首页</a></div>
+        <div id="y"><img src="arrow.jpg"><a href="#">加入收藏</a></div>
+        <div id="z"><img src="arrow.jpg"><a href="#">联系我们</a></div>
     </div>
     <div class="on">
         <div class="top">
             <div class="logo">
-                <img src="photo/logo.jpg">
-                <img class="right" src="photo/tel.jpg">
+                <img src="logo.jpg">
+                <img class="right" src="tel.jpg">
             </div>
             <div class="tel">24小时服务热线：</div>
             <div class="number">123-456-7890</div>
@@ -35,15 +422,15 @@
             </ul>
             <div class="search">
                 <div><input type="text"></div>
-                <div class="sear"><img src="photo/search.jpg" height="18px"></div>
+                <div class="sear"><img src="search.jpg" height="18px"></div>
             </div>
         </div>
 
         <div class="box">
             <ul class="list">
-                <li class="item active"><img src="photo/ad2.jpg" width="1128px" height="400px"></li>
-                <li class="item"><img src="photo/ad3.jpg" width="1128px" height="400px"></li>
-                <li class="item"><img src="photo/ad4.jpg" width="1128px" height="400px">
+                <li class="item active"><img src="ad2.jpg" width="1128px" height="400px"></li>
+                <li class="item"><img src="ad3.jpg" width="1128px" height="400px"></li>
+                <li class="item"><img src="ad4.jpg" width="1128px" height="400px">
                 </li>
             </ul>
             <button type="button" class="btn" id="goPre"><</button>
@@ -52,9 +439,9 @@
 
         <div class="news">
             <div class="news-one">
-                <div class="shang">新闻中心<a href="#"><span><img src="photo/more.jpg"></span></a></div>
+                <div class="shang">新闻中心<a href="#"><span><img src="more.jpg"></span></a></div>
                 <div class="zhong">
-                    <img src="photo/news.jpg">
+                    <img src="news.jpg">
                     <div class="wenzi">
                         <div id="one">520 慕女神喊你来表白!</div>
                         <div>活动时间:5月20日——5月25日</div>
@@ -64,19 +451,19 @@
                 </div>
                 <div class="xia">
                     <ul>
-                        <li><img src="photo/list.jpg"><a href="#">【慕课访谈 用户端】“有为屌丝”在路上</a><span>2014-06-01</span></li>
-                        <li><img src="photo/list.jpg"><a href="#">【有奖活动】给父亲的三行书信</a><span>2014-06-01</li>
-                            <li><img src="photo/list.jpg"><a href="#">《程序猿，请晒出你的童年》活动获奖公告</a><span>2014-05-30</li>
-                            <li><img src="photo/list.jpg"><a href="#">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a><span>2014-05-28</li>
+                        <li><img src="list.jpg"><a href="#">【慕课访谈 用户端】“有为屌丝”在路上</a><span>2014-06-01</span></li>
+                        <li><img src="list.jpg"><a href="#">【有奖活动】给父亲的三行书信</a><span>2014-06-01</li>
+                            <li><img src="list.jpg"><a href="#">《程序猿，请晒出你的童年》活动获奖公告</a><span>2014-05-30</li>
+                            <li><img src="list.jpg"><a href="#">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a><span>2014-05-28</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="news-two">
-                    <div class="shang-b">课程中心<a href="#"><span><img src="photo/more.jpg"></span></a>
+                    <div class="shang-b">课程中心<a href="#"><span><img src="more.jpg"></span></a>
                 </div>
                 <div class="zhong-b">
-                    <img src="photo/QQ截图20140531173247.jpg" width="150px" height="120px">
+                    <img src="QQ截图20140531173247.jpg" width="150px" height="120px">
                     <div class="wenzi-b">
                         <div id="two">CSS圆角进化论</div>
                         <div>CSS圆角的实现，经历了三大发展阶段：背景图片方式、CSS2.0+HTML标签模拟、CSS3.0圆角属性。本案例详细讲述每一种的实现方式，并对实现的优缺点进行对比分析。</div>
@@ -91,9 +478,9 @@
             </div>
 
             <div class="news-three">
-                <div class="shang-c">媒体聚焦<a href="#"><span><img src="photo/more.jpg"></span></a></div>
-                <div class="zhong-c"><img src="photo/Flash.png"></div>
-                <div class="xia-c"><img src="photo/app.jpg"></div>
+                <div class="shang-c">媒体聚焦<a href="#"><span><img src="more.jpg"></span></a></div>
+                <div class="zhong-c"><img src="Flash.png"></div>
+                <div class="xia-c"><img src="app.jpg"></div>
             </div>
         </div>
     </div>
@@ -128,8 +515,8 @@
             <div><a href="#">在线客服</a></div>
         </div>
         <div class="fifth" style="color: grey;">
-            <img src="photo/weixin.png">微信关注<br>
-            <img src="photo/qrcode.jpg">
+            <img src="weixin.png">微信关注<br>
+            <img src="qrcode.jpg">
         </div>
     </div>
     <script>
